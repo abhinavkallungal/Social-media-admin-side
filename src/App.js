@@ -1,17 +1,17 @@
 import { Typography } from '@mui/material';
+import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import Sidebar from './Components/Sidebar/Sidebar';
-import LoginPage from './Pages/LoginPage/LoginPage';
-import ViewUser from './Pages/UserManagement/ViewUser/ViewUser';
+
+import Router from './Router';
 
 
 function App() {
   return (
-    <div className="App">
-     <Sidebar>
-     <ViewUser/>
-     </Sidebar>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Router />
+      </div>
+    </BrowserRouter>
   );
 }
 
