@@ -35,7 +35,7 @@ function Sidebar(props) {
 
       <Divider />
       <List>
-        {['Dashboard', 'User Management', 'Querys', 'Logout'].map((text, index) => (
+        {['Dashboard', 'User Management', 'Badge management',"Notification Management",'Querys', 'Logout'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
@@ -45,16 +45,7 @@ function Sidebar(props) {
         ))}
       </List>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
+      
     </div>
   );
 
