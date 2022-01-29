@@ -10,6 +10,8 @@ import jwtDecode from 'jwt-decode';
 import LoginPage from '../src/Pages/LoginPage/LoginPage'
 import ViewUser from './Pages/UserManagement/ViewUserPage/ViewUserPage';
 import ViewUserPage from './Pages/UserManagement/ViewUserPage/ViewUserPage';
+import Banner from './Pages/BannerManagement/Banner';
+import AddBannerPage from './Pages/BannerManagement/AddBannerPage';
 
 
 
@@ -63,6 +65,18 @@ function Router() {
                     Token ?<Redirect to="/" /> : <LoginPage/> 
                 }
             </Route>
+            <Route exact path="/Banner">
+                {
+                    Token ? <Banner/>  : <Banner/> 
+                }
+            </Route>
+
+            <Route exact path="/addBanner">
+                {
+                     Token ? <AddBannerPage/> : <Redirect to="/login" />
+                }
+            </Route>
+            
             
 
             

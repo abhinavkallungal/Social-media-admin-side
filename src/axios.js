@@ -69,3 +69,57 @@ export const editUser =(formdata)=>{
     })
 
 }
+
+export const createBanner = (formData) => {
+ 
+    return new Promise(async (resolve, reject) => {
+     
+        const token = localStorage.getItem("token")
+    
+
+        axios.post('http://localhost:4000/api/v1/admin/addBanner', formData, { headers: { Authorization: token, 'Content-Type': 'multipart/form-data' } }).then((data) => {
+            
+            resolve(data.data)
+            
+        }).catch((err) => {
+           
+            reject(err)
+        })
+    })
+
+}
+
+export const getAllBanners =()=>{
+    return new Promise(async(resolve,reject)=>{
+        const token = localStorage.getItem("token")
+
+
+        axios.get('http://localhost:4000/api/v1/admin/getAllBanners',{ headers: { Authorization: token } }).then((data)=>{
+            resolve(data)
+
+        }).catch((err)=>{
+
+            reject(err)
+
+        })
+    })
+
+
+}
+
+export const deleteBanner =(id)=>{
+    
+    return new Promise(async(resolve,reject)=>{
+        const token = localStorage.getItem("token")
+
+        axios.get('http://localhost:4000/api/v1/admin/deleteBanner/'+id,{ headers: { Authorization: token } }).then((data)=>{
+            console.log(data.data);
+            resolve(data)
+
+        }).catch((err)=>{
+            reject(err)
+
+        })
+    })
+
+}
